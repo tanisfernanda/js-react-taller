@@ -1,3 +1,4 @@
+
 const productos = [
   { id: 1, nombre: 'Mouse', precio: 50000, categoria: 'Perifericos', stock: 5 },
   { id: 2, nombre: 'Teclado', precio: 90000, categoria: 'Perifericos', stock: 0 },
@@ -10,4 +11,7 @@ const productos = [
   { id: 9, nombre: 'Pad Mouse', precio: 35000, categoria: 'Perifericos', stock: 15 },
   { id: 10, nombre: 'Soporte Monitor', precio: 110000, categoria: 'Accesorios', stock: 6 }
 ];
-console.log(productos);
+
+productos.forEach((producto, indice) => {
+  console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - stock: ${producto.stock}`);
+});
