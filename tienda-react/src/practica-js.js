@@ -1,4 +1,3 @@
-
 const productos = [
   { id: 1, nombre: 'Mouse', precio: 50000, categoria: 'Perifericos', stock: 5 },
   { id: 2, nombre: 'Teclado', precio: 90000, categoria: 'Perifericos', stock: 0 },
@@ -15,3 +14,12 @@ const productos = [
 productos.forEach((producto, indice) => {
   console.log(`${indice + 1}. ${producto.nombre} - $${producto.precio} - stock: ${producto.stock}`);
 });
+
+const preciosConIva = productos.map(producto => producto.precio * 1.19);
+console.log(preciosConIva);
+
+const nombresMayuscula = productos.map(producto => producto.nombre.toUpperCase());
+console.log(nombresMayuscula);
+
+const resumenProductos = productos.map(producto => `${producto.nombre} vale $${producto.precio}`);
+console.log(resumenProductos);
