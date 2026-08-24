@@ -11,17 +11,20 @@ const productos = [
   { id: 10, nombre: 'Soporte Monitor', precio: 110000, categoria: 'Accesorios', stock: 6 }
 ];
 
-const mayorA100k = productos.filter(producto => producto.precio > 100000);
-console.log(mayorA100k);
+const hayAgotados = productos.some(producto => producto.stock === 0);
+console.log(hayAgotados);
 
-const entre50kY200k = productos.filter(producto => producto.precio >= 50000 && producto.precio <= 200000);
-console.log(entre50kY200k);
+const hayMasDeUnMillon = productos.some(producto => producto.precio > 1000000);
+console.log(hayMasDeUnMillon);
 
-const categoriaPerifericos = productos.filter(producto => producto.categoria === 'Perifericos');
-console.log(categoriaPerifericos);
+const preciosMayoresAZero = productos.every(producto => producto.precio > 0);
+console.log(preciosMayoresAZero);
 
-const producto5 = productos.find(producto => producto.id === 5);
-console.log(producto5);
+const stockValido = productos.every(producto => producto.stock >= 0);
+console.log(stockValido);
 
-const buscarProducto = id => productos.find(producto => producto.id === id);
-console.log(buscarProducto(5));
+const valorInventario = productos.reduce(
+  (total, producto) => total + (producto.precio * producto.stock),
+  0
+);
+console.log(valorInventario);
